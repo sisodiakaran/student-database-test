@@ -1,16 +1,20 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of StudentView
  *
- * @author karan
+ * @author Karan S Sisodia <karansinghsisodia@gmail.com>
  */
 class StudentView {
-    //put your code here
+    private $model;
+ 
+    public function __construct($model, $controller) {
+        $this->controller = $controller;
+        $this->model = $model;
+    }
+ 
+    public function output(){
+        $data = $this->model->tstring;
+        require_once($this->model->template);
+    }
 }
